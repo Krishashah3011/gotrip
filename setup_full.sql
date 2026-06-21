@@ -13,13 +13,13 @@ CREATE TABLE IF NOT EXISTS admins (
   password   VARCHAR(255) NOT NULL,
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
--- Default admin credentials: username=admin | password=admin123
+-- Default admin account is created during setup.
 -- After import, visit http://localhost/gotrip/reset_admin.php to change to gotrip@2024
 -- The hash below is bcrypt of 'admin123' (cost=10), verified correct
 DELETE FROM admins WHERE username='admin';
 INSERT INTO admins (username, password) VALUES
   ('admin', '$2y$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy');
--- Login with: admin / admin123  then run reset_admin.php to set your own password
+-- Change credentials immediately after installation.
 
 -- ── PLACES ───────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS places (
