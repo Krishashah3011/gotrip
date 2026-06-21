@@ -1,10 +1,10 @@
 <?php
 $host     = 'localhost';
 $dbname   = 'gotrip_db';
-$username = 'root';
-$password = '';
+$username = 'your_db_username';
+$password = 'your_db_password';
 
-$conn = new mysqli($host, $username, $password, $dbname, 3306);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 if ($conn->connect_error) {
     // Check if caller expects JSON (API files) or HTML (admin pages)
